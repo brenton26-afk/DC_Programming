@@ -32,9 +32,9 @@ function setup() {
   triangle(xp + 100, 
            yp + 100, 
            xp + 75 + 100, 
-           25 + 100, 
+           yp - 25 + 100, 
            xp + 75 + 100, 
-           75 + 100)
+           yp + 25 + 100)
   
   fill("orange")
   ellipse(xp + 100, yp + 100, 100, 25);
@@ -43,9 +43,9 @@ function setup() {
   triangle(xp + 200, 
            yp + 250, 
            xp + 75 + 200, 
-           25 + 250, 
+           yp - 25 + 250, 
            xp + 75 + 200, 
-           75 + 250)
+           yp + 25 + 250)
   
   fill("orange")
   ellipse(xp + 200, yp + 250, 100, 25);
