@@ -3,6 +3,9 @@
 function setup() {
   createCanvas(400, 400);
 }
+
+let swimming = 450;
+
  function draw(){ 
   
   background("blue");
@@ -15,6 +18,18 @@ function setup() {
    //the first point of the triangle is in the exact middle of the fish (x-cord, y-cord)
    //the second point is the x-cord plus 75 and y-cord minus 25
    //the third point is the same x-cord plus 75 and the same y-cord plus 25
+  if(swimming <= -75){
+    swimming = 450
+  }
+   fill("turquoise")
+   fishie(swimming, 100, "yellow");
+   fishie(swimming, 200, "red");
+   fishie(swimming, 250, "turquoise");
+   swimming = swimming - 1;
+   swimming = swimming - 1;
+   swimming = swimming - 1;
+   swimming = swimming - 1;
+   swimming = swimming - 1;
    
    
   fill("darkorange")
@@ -55,5 +70,17 @@ function setup() {
 
 
 
+}
+
+function fishie(xps, yps, color){
+  triangle(xps, 
+           yps, 
+           xps + 75, 
+           yps - 25, 
+           xps + 75, 
+           yps + 25);
+  
+  fill(color);
+  ellipse(xps, yps, 100, 25);
 }
 
