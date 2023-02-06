@@ -2,25 +2,34 @@
 
 function setup() {
   createCanvas(400, 400);
-  background("black");
-  fill("yellow")
-  for(let i = 0; i < random(20, 75); i++){
-    star(random(1, 400), random(1, 300), 5, 20, 5);
+  //background("black");
+  //back()
+  
+  
+}
+
+let done = false;
+
+function draw() {
+    
+  //fly(150, 300);
+  //fly(200, 100);
+  
+  if(done == false){
+    back()
   }
-  noFill()
+ 
 
 }
 
-
-
-function draw() {
-  
-  fly(150, 300);
-   fly(200, 100);
- fly(250, 200);
-  
- 
-
+function back(){
+  background("black");
+  fill("yellow")
+  for(let i = 0; i < random(25, 50); i++){
+    star(random(1, 400), random(1, 400), 5, 20, 5);
+  }
+  noFill()
+  done = true;
 }
 
 function fly(xPos, yPos){
@@ -37,6 +46,9 @@ function fly(xPos, yPos){
            xP + 35, yP - 25,
            xP + 35, yP + 25);
   rect(xP + 35, yP - 25, 100, 50);
+  
+  fill("gray")
+  circle(xPos + 60, yPos, 30)
   
   fill("orange");
   triangle(xPos + 135, yPos - 25, 
@@ -70,10 +82,15 @@ function fly(xPos, yPos){
   noFill()
     
   
-  
+
 }
 
-
+function mouseDragged(){
+  clear()
+  back() 
+  fly(mouseX, mouseY);
+  
+}
 
 function star(x, y, radius1, radius2, npoints) {
   let angle = TWO_PI / npoints;
@@ -84,11 +101,11 @@ function star(x, y, radius1, radius2, npoints) {
     let sx = x + cos(a) * radius2;
     let sy = y + sin(a) * radius2;
     vertex(sx, sy);
-    console.log("First vertex: " + sx + ", " + sy);
+    //console.log("First vertex: " + sx + ", " + sy);
     sx = x + cos(a + halfAngle) * radius1;
     sy = y + sin(a + halfAngle) * radius1;
     vertex(sx, sy);
-    console.log("Second vertex: " + sx + ", " + sy);
+    //console.log("Second vertex: " + sx + ", " + sy);
 }
   endShape(CLOSE);
 }
