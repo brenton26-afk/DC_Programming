@@ -18,3 +18,8 @@ function isHit(X, Y){
   //text("Done", 400, 400)
   
 }
+
+function ResetB(){
+  background(220)
+  //hills(200, 0)
+}
