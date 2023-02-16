@@ -14,13 +14,15 @@ let cGreen = 255;
 
 
 
+
 function setup() {
   createCanvas(800, 800);
 }
 
 function draw() {
-  background(220);
-  //hills(200, 0);
+  //background(220);
+    ResetB()
+  
   //shows the "cursor" as you move the mouse across the canvas
   if(showImg == true){
     theCursor(mouseX, mouseY, cSize, "red");
