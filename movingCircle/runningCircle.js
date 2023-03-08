@@ -145,7 +145,7 @@ function mouseClicked() {
       gameMode = "Medium";
       theTime = 100;
       csize = 100;
-      diff = 50;
+      diff = 25;
     }
     if (
       mouseX >= c3x - cs / 2 &&
@@ -156,7 +156,7 @@ function mouseClicked() {
       gameMode = "Hard";
       theTime = 75;
       csize = 75;
-      diff = 25;
+      diff = 35;
     }
   }
 
