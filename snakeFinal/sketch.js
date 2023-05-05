@@ -9,7 +9,7 @@ let snakeHead;
 function preload() {
   snakeHead = loadImage("snakeHead.png");
 }
-let pillX = [400, 700, 1000, 1300, 1600, 1900];
+let pillX = [300, 600, 900, 1200, 1500, 1800];
 let pillLen = [];
 let gap = 220;
 
@@ -65,7 +65,7 @@ function draw() {
     for (let i = 0; i <= pillX.length - 1; i++) {
       pillX[i] = pillX[i] - pillSpeed;
       if (pillX[i] <= -40) {
-        pillX[i] = 1900;
+        pillX[i] = 1800;
       }
     }
 
@@ -79,7 +79,7 @@ function draw() {
         ) {
           if (
             snakeY[sn] - 20 <= pillLen[i] ||
-            snakeY[sn] - 20 >= pillLen[i] + gap
+            snakeY[sn] + 20 >= pillLen[i] + gap
           ) {
             pillSpeed = 0;
             clear();
@@ -114,9 +114,9 @@ function draw() {
     fill("red");
     if (mins == 0) {
       text(seconds, 725, 75);
-    }else if (seconds < 10){
+    } else if (seconds < 10) {
       text(mins + ": 0" + seconds, 675, 75);
-    }else{
+    } else {
       text(mins + ": " + seconds, 675, 75);
     }
     noFill();
@@ -128,7 +128,7 @@ let start = 0;
 let seconds = 0;
 let mins = 0;
 function timing() {
-  if (millis() - start >= 500) {
+  if (millis() - start >= 50) {
     if (seconds < 59) {
       seconds++;
     } else if (seconds == 59) {
