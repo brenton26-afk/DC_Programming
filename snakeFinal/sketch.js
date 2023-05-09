@@ -1,3 +1,4 @@
+/* by: Brenton Overfield */
 let snakeX = [];
 let snakeY = [];
 
